@@ -189,10 +189,11 @@ function displayEvolution(url) {
         
             reponse+="<li>Specie name : "+data.chain.species.name+"</li>";
 
-            for(let i = 0; i < data.names.length; i++ ) {
+            for(let i = 0; i < data.chain.evolves_to.length; i++ ) {
                 
             
-            reponse+="<li>Evolves to : "+data.evolves_to[i].species.name+"</li>";
+            reponse+="<li>Evolves to : "+data.chain.evolves_to[i].species.name+"</li>";
+            reponse+="<li>Min Level : "+data.chain.evolves_to[i].evolution_details[i].min_level+"</li>";
             }
             reponse+="</ul>";
             $("#detail").html(reponse);
@@ -474,20 +475,14 @@ function clickPokemon(url) {
     });
 }
 
-function displayContest(url) {
+function displayPokemons(url) {
 
     $.get( url, function( data ) {
         let reponse = "<ul>"
         console.log(data);
-        
-            reponse+="<li>Berry Flavor : "+data.berry_flavor.name+"</li>";
 
-            for(let i = 0; i < data.names.length; i++ ) {
-                reponse+="<li>Name : "+data.names[i].name+" and Color :  "+data.names[i].color+"</li>";
-            }
+            reponse+="<li><img src=\""+data.sprites.front_default+"\"></li>";
 
-            
-           
             reponse+="</ul>";
             $("#detail").html(reponse);
 
