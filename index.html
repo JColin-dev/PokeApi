@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/poke.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./js/poke.js" defer></script>
+    <title>PokéAPI</title>
+</head>
+<body>
+    
+<nav class="topnav" id="myTopnav">
+    <a href="#" onclick="clickBerries('https://pokeapi.co/api/v2/berry/')" id="berries">Berries</a>
+    <a href="#" onclick="clickContest('https://pokeapi.co/api/v2/contest-type/')">Contest</a>
+    <a href="#" onclick="clickEncounters('https://pokeapi.co/api/v2/encounter-method')">Encounters</a>
+    <a href="#" onclick="clickEvolution('https://pokeapi.co/api/v2/evolution-chain/')">Evolution</a>
+    <a href="#" onclick="clickGames('https://pokeapi.co/api/v2/generation/')">Games</a>
+    <a href="#" onclick="clickItems('https://pokeapi.co/api/v2/item/')">Items</a>
+    <a href="#" onclick="clickLocations('https://pokeapi.co/api/v2/location/')">Locations</a>
+    <a href="#" onclick="clickMachines('https://pokeapi.co/api/v2/machine/')">Machines</a>
+    <a href="#" onclick="clickMoves('https://pokeapi.co/api/v2/move/')">Moves</a>
+    <a href="#" onclick="clickPokemon('https://pokeapi.co/api/v2/ability/')">Pokémon</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+</nav>
+
+
+<div class="ensemble">
+    <div class="liste" id="liste"></div>
+    <div class="detail" id="detail"></div>
+</div>
+
+</body>
+</html>
