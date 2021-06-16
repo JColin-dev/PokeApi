@@ -54,7 +54,7 @@ body {
 
 .liste, .detail {
     width: 70vw;
-    height: 70vh;
+    min-height: 70vh;
     border: 1px solid black;
     background-color: rgb(156, 154, 154);
     opacity: 0.9;
@@ -87,5 +87,10 @@ body {
     background-color: rgba(255,255,255,.6);
     border-radius: 15px;
     padding: 8px;
+}
+
+.pokemon {
+  height: 200px;
+  width: 200px;
 }
 

@@ -354,7 +354,7 @@ function clickMachines(url) {
         let reponse = "<ul>"
         for(let i = 0; i < data.results.length; i++ ) {
             //$("liste").html("<li></li>")
-            reponse+="<li onclick='displayMachines(\""+(+i+1)+"\")'>"+(+i+1)+"</li>";
+            reponse+="<li onclick='displayMachines(\""+data.results[i].url+"\")'>"+(+i+1)+"</li>";
         }
         reponse+="</ul>";
 
@@ -377,20 +377,16 @@ function clickMachines(url) {
     });
 }
 
-function displayContest(url) {
+function displayMachines(url) {
 
     $.get( url, function( data ) {
         let reponse = "<ul>"
         console.log(data);
         
-            reponse+="<li>Berry Flavor : "+data.berry_flavor.name+"</li>";
-
-            for(let i = 0; i < data.names.length; i++ ) {
-                reponse+="<li>Name : "+data.names[i].name+" and Color :  "+data.names[i].color+"</li>";
-            }
-
+            reponse+="<li>Item : "+data.item.name+"</li>";
+            reponse+="<li>Move : "+data.move.name+"</li>";
+            reponse+="<li>Version group : "+data.version_group.name+"</li>";
             
-           
             reponse+="</ul>";
             $("#detail").html(reponse);
 
@@ -481,10 +477,27 @@ function displayPokemons(url) {
         let reponse = "<ul>"
         console.log(data);
 
-            reponse+="<li><img src=\""+data.sprites.front_default+"\"></li>";
+        for(let i = 0; i < data.forms.length; i++ ) {
+            reponse+="<li>Form : "+data.forms[i].name+"</li>";
+        }
+        for(let i = 0; i < data.game_indices.length; i++ ) {
+            reponse+="<li>Version : "+data.game_indices[i].version.name+"</li>";
+        }
+        for(let i = 0; i < data.moves.length; i++ ) {
+            reponse+="<li>Move : "+data.moves[i].move.name+"</li>";
+        }
+        for(let i = 0; i < data.stats.length; i++ ) {
+            reponse+="<li>Base stat : "+data.stats[i].base_stat+"</li>";
+            reponse+="<li>Stat : "+data.stats[i].stat.name+"</li>";
+        }
+        for(let i = 0; i < data.types.length; i++ ) {
+            reponse+="<li>Base stat : "+data.types[i].type.name+"</li>";
+        }
 
-            reponse+="</ul>";
-            $("#detail").html(reponse);
+        reponse+="<img class='pokemon' src=\""+data.sprites.front_default+"\">";
+
+        reponse+="</ul>"
+        $("#detail").html(reponse);
 
     });
 }
